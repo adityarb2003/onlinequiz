@@ -132,12 +132,11 @@ USE_TZ = True
 # In your settings.py file
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # 👈 Always define this!
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 if not DEBUG:
-    # Collect static files into the `staticfiles` directory
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-    # Use WhiteNoise to serve static files efficiently
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
