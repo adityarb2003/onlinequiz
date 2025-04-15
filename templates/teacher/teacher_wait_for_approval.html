@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+
+<style media="screen" xmlns="http://www.w3.org/1999/html">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <body>
+    {% include "quiz/navbar.html" %}
+
+      <p class="jumbotron" style="margin-top: 0px;
+        margin-bottom: 0px;">
+        <h1 class="display-4">Hello {{request.user.first_name}}</h1>
+        <p class="lead">Your Account is not approved till now <br><br>Our Team is checking your profile <br><br> Soon Your Account Will Be Approved</p>
+        <hr class="my-4">
+        <p>Check Later</p>
+        <p class="lead">
+          <form action="/logout/" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="logout_btn">Logout for now </button>
+        </form>
+      </p>
+      </div>
+
+{% include "quiz/footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Let's Quiz</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: linear-gradient(to right, #b92b27, #1565c0);
+      }
+
+      /* Outer wrapper simulates gradient margin/padding effect */
+      .jumbotron-wrapper {
+        background: linear-gradient(to right, #b92b27, #1565c0);
+        padding: 40px;
+        margin: 40px;
+        border-radius: 30px;
+      }
+
+      /* Inner content with dark background */
+      .jumbotron {
+        margin: 0;
+        background:linear-gradient(to right, #b92b27, #1565c0);
+      
+        border-radius: 20px;
+        padding: 60px 30px;
+        color: linear-gradient(to right, #b92b27, #1565c0);
+      }
+
+      .display-1,
+      .display-4 {
+        color: linear-gradient(to right, #b92b27, #1565c0);
+      }
+
+      /* Darker text for specific lines */
+      .dark-text {
+        color: #222;
+        font-size:25px;
+      }
+
+      .btn-info {
+        background: none;
+        border: 2px solid #2ecc71;
+        color: white;
+        border-radius: 24px;
+        padding: 14px 40px;
+        transition: 0.3s;
+      }
+
+      .btn-info:hover {
+        background: #2ecc71;
+        color: white;
+      }
+
+      a.btn i {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "quiz/navbar.html" %}
+    <br>
+    <section id="section-jumbotron" class="d-flex justify-content-center align-items-center">
+      <div class="jumbotron-wrapper">
+        <div class="jumbotron jumbotron-fluid text-center">
+          <div class="container">
+            <h1 class="display-1">Let's Quiz</h1>
+            <p class="display-4 d-none d-sm-block"><b>Test your skills and become a master.</b></p>
+            <p class=" dark-text"><b>We organize quizzes on various topics</b></p>
+            <p class=" dark-text"><b>Sign up if you haven't already and get access to millions of quizzes on the topic of your interest.</b></p>
+            <p><strong class="dark-text">Start Your Journey Here:</strong></p>
+            <a href="/student/studentsignup" class="btn btn-lg btn-info">
+              <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up
+            </a>
+            <br><br><br>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include "quiz/footer.html" %}
+  </body>
+</html>
